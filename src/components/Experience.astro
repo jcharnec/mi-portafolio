@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Mayo 2024",
+        title: "Desarrollador web Full Stack",
+        description:
+            "Prácticas realizadas como parte del Certificado de Profesionalidad en Desarrollo de Aplicaciones Web (CIFO Sabadell). Desarrollo de un proyecto web con Symfony (backend) y Angular (frontend). Gestión de bases de datos SQL con Doctrine y optimización de consultas.",
+    },
+    {
+        date: "Febrero 2016 - Setiembre 2023",
+        title: "Programador CNC, Febrero 2017",
+        description:
+            "Durante 7 años trabajo en el desarrollo de programas para CNC utilizando TrueTops, BendGraph, enfocado en optimizar procesos de producción en el sector del metal.",
+    },
+    {
+        date: "abril 2008 - mayo 2015",
+        title: "Técnico en el Departamento Informático",
+        description:
+            "Mantenimiento de equipos, redes y gestión de bases de datos SQL.",
+    }
+]
+---
+<ol class="relative border-l border-gray-200 dark:border-gray-700 ml-4">
+    {EXPERIENCE.map(experience => (
+        <li class="mb-10 ml-4">
+            <ExperienceItem {...experience} />
+        </li>
+    ))}
+</ol>
+
