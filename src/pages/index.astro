@@ -9,10 +9,14 @@ import Mail from "../icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../icons/Briefcase.astro";
+import Code from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Porfolio de HotaDev - Desarrollador y Programador WEB"
-    description="Contrata a HotaDev para crear tu aplicación web.">
+<Layout
+    title="Porfolio de HotaDev - Desarrollador WEB y Multiplataforma"
+    description="Desarrollador web y multiplataforma con experiencia en PHP, Laravel, Symfony, Angular, C, Java y SQL."
+>
     <main class="px-4">
         <SectionContainer class="py-44 pb-22">
             <h1
@@ -31,38 +35,46 @@ import Briefcase from "../icons/Briefcase.astro";
             <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px] opacity-80">
                 Técnico Superior en Desarrollo de Aplicaciones Multiplataforma.
                 Ubicado en <span class="text-red-300/80">Barcelona, España</span
-                >. Mi último año y medio se ha enfocado en el desarrollo de aplicaciones
-                web, cursando un CP de desarrollo web <span
+                >. Mi último año y medio se ha enfocado en el desarrollo de
+                aplicaciones web, cursando un CP de desarrollo web <span
                     class="opacity-100 font-bold"
                 >
                     JS, CSS y PHP</span
                 > y dos certificados, uno en <span class="opacity-100 font-bold"
                     >LARAVEL
                 </span> y el otro en <span class="opacity-100 font-bold"
-                    >Angular</span>
+                    >Angular</span
+                >
             </h2>
 
             <nav class="flex gap-x-4 mt-8">
                 <SocialPill href="http://www.linkedin.com/in/hotadev">
-                    <LinkedInIcon class="w-6 h-6" />
+                    <LinkedInIcon class="size-6" />
                     LinkedIn
                 </SocialPill>
                 <SocialPill href="https://github.com/jcharnec">
-                    <GithubIcon class="w-6 h-6" />
+                    <GithubIcon class="size-6" />
                     GitHub
                 </SocialPill>
                 <SocialPill href="mailto:xjpeterx@gmail.com">
-                    <Mail class="w-6 h-6" />
+                    <Mail class="size-6" />
                     xjpeterx@gmail.com
                 </SocialPill>
             </nav>
         </SectionContainer>
         <SectionContainer id="experiencia">
-            <h2 class="text-2xl font-semibold mb-6 flex-gap-x-2 items-center">
-                <Briefcase class="size-7 inline"/>
+            <h2 class="text-3xl font-semibold mb-6 flex-gap-x-3 items-center">
+                <Briefcase class="size-7 inline" />
                 Experiencia laboral
             </h2>
-            <Experience />
+            <Experience/>
+        </SectionContainer>
+        <SectionContainer id="proyectos">
+            <h2 class="text-3xl font-semibold mb-6 flex-gap-x-3 items-center">
+                <Code class="size-8 inline" />
+                Proyectos
+            </h2>
+            <Projects/>
         </SectionContainer>
     </main>
 </Layout>
