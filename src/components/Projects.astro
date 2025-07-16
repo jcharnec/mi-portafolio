@@ -1,11 +1,12 @@
 ---
-const TAGS = {
+const TAGS: Record<string, string> = {
     HTML: "bg-red-500",
     CSS: "bg-blue-500",
     JavaScript: "bg-yellow-500",
     PHP: "bg-purple-500",
     SQL: "bg-green-500",
 };
+
 const PROJECTS = [
     {
         title: "LaraBikes",
@@ -38,51 +39,49 @@ const PROJECTS = [
 ];
 ---
 
-{
-    PROJECTS.map((project) => (
-        <article class="mb-12">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
-                {project.title}
-            </h3>
+{PROJECTS.map((project) => (
+    <article class="mb-12">
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+            {project.title}
+        </h3>
 
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <img
-                    class="w-full h-auto mb-4 hover:opacity-90 transition"
-                    src={project.image}
-                    alt={`Captura de pantalla del proyecto ${project.title}`}
-                />
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <img
+                class="w-full h-auto mb-4 hover:opacity-90 transition"
+                src={project.image}
+                alt={`Captura de pantalla del proyecto ${project.title}`}
+            />
+        </a>
+
+        <p class="text-lg mb-4 text-pretty">{project.description}</p>
+
+        <div class="mb-4 space-x-4">
+            <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-blue-400 underline hover:text-blue-300 transition"
+            >
+                Ver Proyecto
             </a>
+            <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-blue-400 underline hover:text-blue-300 transition"
+            >
+                Código en GitHub
+            </a>
+        </div>
 
-            <p class="text-lg mb-4 text-pretty">{project.description}</p>
-
-            <div class="mb-4 space-x-4">
-                <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-400 underline hover:text-blue-300 transition"
+        <ul class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+                <li
+                    class={`px-2 py-1 rounded text-sm ${TAGS[tag] || "bg-gray-600"}`}
                 >
-                    Ver Proyecto
-                </a>
-                <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-400 underline hover:text-blue-300 transition"
-                >
-                    Código en GitHub
-                </a>
-            </div>
-
-            <ul class="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                    <li
-                        class={`px-2 py-1 rounded text-sm ${TAGS[tag] || "bg-gray-600"}`}
-                    >
-                        {tag}
-                    </li>
-                ))}
-            </ul>
-        </article>
-    ))
-}
+                    {tag}
+                </li>
+            ))}
+        </ul>
+    </article>
+))}
