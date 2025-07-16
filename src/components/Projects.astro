@@ -1,43 +1,88 @@
 ---
+const TAGS = {
+    HTML: "bg-red-500",
+    CSS: "bg-blue-500",
+    JavaScript: "bg-yellow-500",
+    PHP: "bg-purple-500",
+    SQL: "bg-green-500",
+};
 const PROJECTS = [
     {
-        title: "Project 1",
-        description: "This is a project description",
-        image: "/images/project1.jpg",
-        link: "https://example.com",
-        github: "https://github.com",
-        tags: ["HTML", "CSS", "JavaScript"]
-    }, 
-    {
-        title: "Project 2",
-        description: "This is a project description",
-        image: "/images/project2.jpg",
-        link: "https://example.com",
-        github: "https://github.com",
-        tags: ["HTML", "CSS", "JavaScript"]
+        title: "LaraBikes",
+        description:
+            "LaraBikes es mi proyecto personal para demostrar cómo construir un sistema de gestión de motos 100% funcional en Laravel. Incluye autenticación con email verification, CRUD con imágenes, filtros de búsqueda, y un panel de administración con roles de usuario. Todo ello presentado en un diseño responsive y moderno, ideal para desktop y móvil.",
+        image: "/projects/larabikes.png",
+        link: "https://larabikes-1.onrender.com/",
+        github: "https://github.com/jcharnec/larabikes",
+        tags: [
+            "PHP",
+            "Laravel",
+            "Blade",
+            "Bootstrap",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "MySQL",
+            "SMTP",
+        ],
     },
     {
-        title: "Project 3",
-        description: "This is a project description",
-        image: "/images/project3.jpg",
-        link: "https://example.com",
-        github: "https://github.com",
-        tags: ["HTML", "CSS", "JavaScript"]
+        title: "Places",
+        description:
+            "Proyecto Social para compartir lugares de interés en el mundo.",
+        image: "/projects/project1.png",
+        link: "http://places.myartsonline.com/",
+        github: "https://github.com/jcharnec/cifoplaces",
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
     }
-]
+];
 ---
 
 {
-    PROJECTS.map(project =>
-        <article>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <ul>
-                {project.tags.map(tag => (
-                    <li>{tag}</li>
+    PROJECTS.map((project) => (
+        <article class="mb-12">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+                {project.title}
+            </h3>
+
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <img
+                    class="w-full h-auto mb-4 hover:opacity-90 transition"
+                    src={project.image}
+                    alt={`Captura de pantalla del proyecto ${project.title}`}
+                />
+            </a>
+
+            <p class="text-lg mb-4 text-pretty">{project.description}</p>
+
+            <div class="mb-4 space-x-4">
+                <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 underline hover:text-blue-300 transition"
+                >
+                    Ver Proyecto
+                </a>
+                <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 underline hover:text-blue-300 transition"
+                >
+                    Código en GitHub
+                </a>
+            </div>
+
+            <ul class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                    <li
+                        class={`px-2 py-1 rounded text-sm ${TAGS[tag] || "bg-gray-600"}`}
+                    >
+                        {tag}
+                    </li>
                 ))}
             </ul>
-            <img src={project.image} alt={project.title} />
         </article>
-    )
+    ))
 }
