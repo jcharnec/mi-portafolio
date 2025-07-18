@@ -1,4 +1,5 @@
 ---
+// src/components/Projects.astro
 const TAGS: Record<string, string> = {
     HTML: "bg-red-500",
     CSS: "bg-blue-500",
@@ -62,7 +63,7 @@ const PROJECTS = [
             />
         </a>
 
-        <p class="text-lg mb-4 text-pretty">{project.description}</p>
+        <p class="text-lg mb-4 text-white text-pretty">{project.description}</p>
 
         <div class="mb-4 space-x-4">
             <a
