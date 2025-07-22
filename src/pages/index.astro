@@ -14,8 +14,8 @@ import About from "../components/About.astro";
 ---
 
 <Layout
-    title="Porfolio de HotaDev - Desarrollador WEB y Multiplataforma"
-    description="Desarrollador web y multiplataforma con experiencia en PHP, Laravel, Symfony, Angular, C, Java y SQL."
+    title="HotaDev | Desarrollador Web Full-Stack"
+    description="Portfolio de Joan Pere Charneco Boix, desarrollador web especializado en Laravel, Symfony, Angular y más."
 >
     <main class="px-4">
         <!-- Presentación -->
@@ -80,12 +80,12 @@ import About from "../components/About.astro";
             <p class="text-lg mb-4 text-white">
                 ¿Interesado en colaborar conmigo o tienes alguna propuesta?
             </p>
-            <a
-                href="mailto:xjpeterx@gmail.com"
-                class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-            >
-                Escríbeme
-            </a>
+            <nav class="flex gap-x-4 mt-8">
+                <SocialPill href="mailto:xjpeterx@gmail.com">
+                    <Mail class="size-6" />
+                    xjpeterx@gmail.com
+                </SocialPill>
+            </nav>
         </SectionContainer>
     </main>
 </Layout>
