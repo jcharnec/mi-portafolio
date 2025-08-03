@@ -10,6 +10,27 @@ const TAGS: Record<string, string> = {
 
 const PROJECTS = [
     {
+        title: "LaraNews",
+        description:
+            "LaraNews es una plataforma de noticias construida con Laravel que permite a los usuarios registrarse, verificar su email, crear y gestionar noticias con imágenes, comentar, y explorar el contenido mediante filtros por título o tema. Dispone de un sistema de roles con panel de administración, moderación de comentarios y papelera para noticias y usuarios. Incluye además email de contacto, seguridad con políticas y middleware, y despliegue en producción sobre PostgreSQL con persistencia de imágenes.",
+        image: "/projects/laranews.png",
+        link: "https://laranews.onrender.com/",
+        github: "https://github.com/jcharnec/laranews",
+        tags: [
+            "PHP",
+            "Laravel",
+            "Blade",
+            "Bootstrap",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PostgreSQL",
+            "SMTP",
+            "Docker",
+            "Render",
+        ],
+    },
+    {
         title: "LaraBikes",
         description:
             "LaraBikes es mi proyecto personal para demostrar cómo construir un sistema de gestión de motos 100% funcional en Laravel. Incluye autenticación con email verification, CRUD con imágenes, filtros de búsqueda, y un panel de administración con roles de usuario. Todo ello presentado en un diseño responsive y moderno, ideal para desktop y móvil.",
@@ -28,7 +49,7 @@ const PROJECTS = [
             "SMTP",
         ],
     },
-        {
+    {
         title: "MolletTronika",
         description:
             "Landing page desarrollada para Mollettronika 2025, un evento de música electrónica urbana celebrado en Mollet del Vallès. Diseñada para captar la atención del público joven y amante del techno, la página presenta un diseño impactante, responsive y visualmente coherente con la estética underground del evento. Incluye información sobre el lineup, artistas, ubicación y horarios, con integración visual de elementos animados (marquesinas, flyers, glitch effects, vinilos girando) y optimizada para redes sociales. Aunque ya no está publicada tras la finalización del evento, puede consultarse como demo en mi portfolio.",
@@ -45,53 +66,57 @@ const PROJECTS = [
         link: "http://places.myartsonline.com/",
         github: "https://github.com/jcharnec/cifoplaces",
         tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-    }
+    },
 ];
 ---
 
-{PROJECTS.map((project) => (
-    <article class="mb-12">
-        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
-            {project.title}
-        </h3>
+{
+    PROJECTS.map((project) => (
+        <article class="mb-12">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+                {project.title}
+            </h3>
 
-        <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <img
-                class="w-full h-auto mb-4 hover:opacity-90 transition"
-                src={project.image}
-                alt={`Captura de pantalla del proyecto ${project.title}`}
-            />
-        </a>
-
-        <p class="text-lg mb-4 text-white text-pretty">{project.description}</p>
-
-        <div class="mb-4 space-x-4">
-            <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blue-400 underline hover:text-blue-300 transition"
-            >
-                Ver Proyecto
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <img
+                    class="w-full h-auto mb-4 hover:opacity-90 transition"
+                    src={project.image}
+                    alt={`Captura de pantalla del proyecto ${project.title}`}
+                />
             </a>
-            <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blue-400 underline hover:text-blue-300 transition"
-            >
-                Código en GitHub
-            </a>
-        </div>
 
-        <ul class="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-                <li
-                    class={`px-2 py-1 rounded text-sm ${TAGS[tag] || "bg-gray-600"}`}
+            <p class="text-lg mb-4 text-white text-pretty">
+                {project.description}
+            </p>
+
+            <div class="mb-4 space-x-4">
+                <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 underline hover:text-blue-300 transition"
                 >
-                    {tag}
-                </li>
-            ))}
-        </ul>
-    </article>
-))}
+                    Ver Proyecto
+                </a>
+                <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 underline hover:text-blue-300 transition"
+                >
+                    Código en GitHub
+                </a>
+            </div>
+
+            <ul class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                    <li
+                        class={`px-2 py-1 rounded text-sm ${TAGS[tag] || "bg-gray-600"}`}
+                    >
+                        {tag}
+                    </li>
+                ))}
+            </ul>
+        </article>
+    ))
+}
