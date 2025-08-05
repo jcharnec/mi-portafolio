@@ -1,11 +1,14 @@
 ---
 // src/components/Header.astro
 ---
-<header class="relative z-10 flex justify-between items-center py-5 w-full xl:w-[1120px] mx-auto">
-    <img 
-        class="rounded-full w-20 h-20"  
-        src="/profile-pic2.png" 
-        alt="hotadev photo" 
+
+<header
+    class="relative z-10 flex justify-between items-center py-5 w-full xl:w-[1120px] mx-auto"
+>
+    <img
+        class="rounded-full w-20 h-20"
+        src="/profile-pic2.png"
+        alt="hotadev photo"
     />
 
     <nav class="flex flex-row gap-x-10 opacity-80 text-white">
@@ -15,4 +18,25 @@
         <a href="#about">Sobre mí</a>
         <a href="#contacto">Contacto</a>
     </nav>
+    <a
+        href="/cv-hotadev.pdf"
+        download
+        class="flex items-center gap-2 px-3 py-1 border border-white/10 rounded hover:bg-white/10 transition text-white text-sm"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16v1a1 1 0 001 1h14a1 1 0 001-1v-1M12 12v6m0 0l3-3m-3 3L9 15m3-12a9 9 0 110 18 9 9 0 010-18z"
+            ></path>
+        </svg>
+        CV
+    </a>
 </header>
