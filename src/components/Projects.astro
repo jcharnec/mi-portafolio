@@ -74,7 +74,14 @@ const PROJECTS = [
     PROJECTS.map((project) => (
         <article class="mb-12">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
-                {project.title}
+                <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-yellow-100 transition"
+                >
+                    {project.title}
+                </a>
             </h3>
 
             <a href={project.link} target="_blank" rel="noopener noreferrer">
