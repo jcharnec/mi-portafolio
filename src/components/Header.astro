@@ -3,9 +3,11 @@
 ---
 
 <header
-    class="w-full max-w-screen-xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center sm:justify-between gap-y-4 sm:gap-y-0"
+    id="main-header"
+    class="sticky top-0 z-50 w-full max-w-screen-xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-x-12 transition-all duration-500 bg-transparent"
 >
-    <div class="flex items-center gap-x-4">
+    <!-- Logo -->
+    <div class="flex justify-center sm:justify-start">
         <img
             class="rounded-full w-16 h-16 sm:w-20 sm:h-20"
             src="/profile-pic2.png"
@@ -13,8 +15,9 @@
         />
     </div>
 
+    <!-- Menú -->
     <nav
-        class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white text-sm sm:text-base"
+        class="mt-4 sm:mt-0 flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-white text-sm sm:text-base"
     >
         <a href="#top" class="hover:text-blue-400 transition-colors">Inicio</a>
         <a href="#experiencia" class="hover:text-blue-400 transition-colors"
@@ -52,3 +55,15 @@
         </a>
     </nav>
 </header>
+
+<script>
+    const header = document.getElementById("main-header")!;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            header.classList.add("bg-black/50", "backdrop-blur-md");
+        } else {
+            header.classList.remove("bg-black/50", "backdrop-blur-md");
+        }
+    });
+</script>
