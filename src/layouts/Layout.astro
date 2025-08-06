@@ -33,6 +33,21 @@ const { title } = Astro.props;
         <Header />
         <slot />
         <Footer />
+        <!-- Script para calcular altura del header -->
+        <script>
+            function updateHeaderHeight() {
+                const header = document.getElementById("main-header");
+                if (header) {
+                    document.documentElement.style.setProperty(
+                        "--header-height",
+                        header.offsetHeight + "px"
+                    );
+                }
+            }
+
+            window.addEventListener("load", updateHeaderHeight);
+            window.addEventListener("resize", updateHeaderHeight);
+        </script>
     </body>
 
     <style is:global>

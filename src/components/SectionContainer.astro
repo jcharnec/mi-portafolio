@@ -8,6 +8,7 @@ const { class: className = "", id } = Astro.props;
 
 <style is:global>
     section[id] {
+        /* Usamos la altura calculada del header o un valor por defecto */
         scroll-margin-top: var(--header-height, 128px);
     }
 </style>
