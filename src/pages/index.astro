@@ -34,6 +34,12 @@ import About from "../components/About.astro";
                 </a>
             </h1>
 
+            <!-- Sobre mí -->
+            <SectionContainer id="about">
+                <About />
+            </SectionContainer>
+
+            <!-- SocialPill debajo del Sobre mí -->
             <nav class="flex flex-col sm:flex-row gap-4 mt-8">
                 <SocialPill href="http://www.linkedin.com/in/hotadev">
                     <LinkedInIcon class="size-6" />
@@ -48,11 +54,6 @@ import About from "../components/About.astro";
                     xjpeterx@gmail.com
                 </SocialPill>
             </nav>
-        </SectionContainer>
-
-        <!-- Sobre mí -->
-        <SectionContainer id="about">
-            <About />
         </SectionContainer>
 
         <!-- Experiencia -->

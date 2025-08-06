@@ -1,11 +1,13 @@
 ---
 const { class: className = "", id } = Astro.props;
-const scrollClass = id ? "scroll-mt-32" : "";
 ---
 
-<section
-    id={id}
-    class={`w-full lg:w-[900px] mx-auto ${scrollClass} ${className}`}
->
+<section id={id} class={`w-full lg:w-[900px] mx-auto ${className}`}>
     <slot />
 </section>
+
+<style is:global>
+    section[id] {
+        scroll-margin-top: var(--header-height, 128px);
+    }
+</style>
