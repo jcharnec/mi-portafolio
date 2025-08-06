@@ -1,11 +1,11 @@
 ---
-// src/components/SectionContainer.astro
-const { class: className, id } = Astro.props;
+const { class: className = "", id } = Astro.props;
+const scrollClass = id ? "scroll-mt-32" : "";
 ---
 
 <section
     id={id}
-    class={`w-full max-w-screen-lg mx-auto px-4 sm:px-6 ${className}`}
+    class={`w-full lg:w-[900px] mx-auto ${scrollClass} ${className}`}
 >
     <slot />
 </section>
