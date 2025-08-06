@@ -5,6 +5,7 @@ import LinkedInIcon from "../icons/LinkedIn.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GithubIcon from "../icons/GitHub.astro";
 import Mail from "../icons/Mail.astro";
+import Contact from "../icons/Contact.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../icons/Briefcase.astro";
@@ -80,7 +81,12 @@ import About from "../components/About.astro";
 
         <!-- Contacto -->
         <SectionContainer id="contacto">
-            <h2 class="text-white text-3xl font-semibold mb-6">Contacto</h2>
+            <h2
+                class="text-white text-3xl font-semibold mb-6 flex items-center gap-x-3"
+            >
+                <Contact class="size-7 inline" />
+                Contacto
+            </h2>
             <p class="text-lg mb-4 text-white">
                 ¿Interesado en colaborar conmigo o tienes alguna propuesta?
             </p>
