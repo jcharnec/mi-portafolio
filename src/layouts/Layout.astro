@@ -16,12 +16,60 @@ const { title } = Astro.props;
 <html lang="es" class="dark">
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content={"description"} />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/png" href="/faviconjpc.png" />
-        <meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Meta principal -->
         <title>{title}</title>
+        <meta name="description" content={Astro.props.description} />
+        <meta name="author" content="Joan Pere Charneco Boix" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://hotadev.com.es/" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/faviconjpc.png" />
+
+        <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={Astro.props.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hotadev.com.es/" />
+        <meta
+            property="og:image"
+            content="https://hotadev.com.es/og-image.jpg"
+        />
+        <meta property="og:locale" content="es_ES" />
+
+        <!-- Twitter Cards -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={Astro.props.description} />
+        <meta
+            name="twitter:image"
+            content="https://hotadev.com.es/og-image.jpg"
+        />
+        <meta name="twitter:site" content="@tuusuario" />
+        <!-- opcional -->
+        <meta name="twitter:creator" content="@tuusuario" />
+        <!-- opcional -->
+
+        <!-- JSON-LD (Structured Data tipo Person) -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Joan Pere Charneco Boix",
+                "jobTitle": "Desarrollador Web Full‑Stack",
+                "url": "https://hotadev.com.es",
+                "sameAs": [
+                    "https://www.linkedin.com/in/hotadev",
+                    "https://github.com/jcharnec"
+                ],
+                "image": "https://hotadev.com.es/profile-pic2.png",
+                "description": "Desarrollador web y multiplataforma en Barcelona con experiencia en Laravel, Angular, Symfony y más."
+            }
+        </script>
     </head>
+
     <body class="relative min-h-screen bg-transparent">
         <!-- Fondo -->
         <div
